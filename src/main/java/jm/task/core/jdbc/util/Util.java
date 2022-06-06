@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 
 public class Util {
     private static SessionFactory sessionFactory;
-    public static Logger logger = Logger.getLogger("Logger");
     private final static String username = "root";
     private final static String password = "MySQL";
     private final static String dbUrl = "jdbc:mysql://localhost:3306/task_1_1_4?useSSL=false";
@@ -50,8 +49,4 @@ public class Util {
         return sessionFactory;
     }
 
-    public static void showError(SQLException e) {
-        logger.severe("Error: " + e.getMessage());
-        logger.severe("Error Code: " + e.getErrorCode());
-    }
 }
