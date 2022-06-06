@@ -11,16 +11,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class Util {
     private static SessionFactory sessionFactory;
-    private final static String username = "root";
-    private final static String password = "MySQL";
-    private final static String dbUrl = "jdbc:mysql://localhost:3306/task_1_1_4?useSSL=false";
+    private final static String USERNAME = "root";
+    private final static String PASSWORD = "MySQL";
+    private final static String DB_URL = "jdbc:mysql://localhost:3306/task_1_1_4?useSSL=false";
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(dbUrl, username, password);
+        return DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
     }
 
 
@@ -30,9 +29,9 @@ public class Util {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, dbUrl);
-                settings.put(Environment.USER, username);
-                settings.put(Environment.PASS, password);
+                settings.put(Environment.URL, DB_URL);
+                settings.put(Environment.USER, USERNAME);
+                settings.put(Environment.PASS, PASSWORD);
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 configuration.setProperties(settings);
